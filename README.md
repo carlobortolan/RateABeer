@@ -1,5 +1,6 @@
 # rust-fullstack-demo
 A fullstack Rust application demo
+> __NOTE__: __THIS PROJECT IS STILL UNDER DEVELOPMENT.__
 
 ## CONFIG
 `cargo build`
