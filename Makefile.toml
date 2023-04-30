@@ -52,3 +52,7 @@ args = ["run", "--manifest-path", "${BACKEND_PATH}/Cargo.toml", "--release"]
 [tasks.start_all]
 workspace = false
 run_task = { name = ["start_front", "start_back"], parallel = true }
+
+[tasks.start_prod]
+workspace = false
+run_task = { name = ["install_build_start_front_prod", "start_back_prod"], parallel = true }
