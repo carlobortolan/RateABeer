@@ -1,6 +1,14 @@
 # rust-fullstack-demo
 A fullstack Rust application demo
 
+## CONFIG
+`cargo build`
+`cargo make start_all`
+`sudo npm install -g wasm-pack`
+`wasm-pack build`
+
+
+
 ## Items Demonstrated In this App
 
 ### General
