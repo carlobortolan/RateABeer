@@ -16,16 +16,23 @@ RUN apk upgrade --update-cache --available && \
 ARG OPENSSL_DIR=/usr
 RUN cargo install simple-http-server --root /app
 RUN rustup target add wasm32-unknown-unknown
-RUN npm install -g pnpm
 
 # Actually build the app
+COPY ./ ./
 COPY ./frontend ./frontend
-RUN cd frontend && pnpm install && cd /app
+# RUN cd frontend && npm install -g pnpm && pnpm install && pnpm run build && cd /app
+RUN npm install -g pnpm
+RUN npm install
+RUN pnpm install
+RUN npm install -g webpack
+RUN pnpm install -D webpack-cli
+RUN npm install -g wasm-pack
+RUN cd frontend && pnpm install -D webpack-cli
+RUN cd frontend && pnpm run build
+
 COPY ./database ./database
 COPY ./shared ./shared
 COPY docker.env ./frontend/.env
-RUN cd frontend && pnpm run build
-
 
 FROM alpine:3.16
 WORKDIR /app

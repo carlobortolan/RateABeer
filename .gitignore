@@ -15,6 +15,5 @@ Cargo.lock
 /target
 node_modules
 pkg
-.env
 docker.env
 dist

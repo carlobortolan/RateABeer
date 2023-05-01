@@ -9,4 +9,5 @@ RUN cargo build --release --manifest-path /app/backend/Cargo.toml
 FROM alpine:3.16
 COPY --from=builder /app/backend/target/release /target/release/backend
 RUN ["chmod", "+x", "/target/release/backend"]
+EXPOSE 8080
 CMD ["/target/release/backend/backend"]

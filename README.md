@@ -4,8 +4,15 @@ A fullstack Rust application demo
 
 ## CONFIG
 `cargo build`
-`cargo make start_all`
-`sudo npm install -g wasm-pack`
+`cargo install cargo-make`
+`npm install -g wasm-pack`
+`npm install -g pnpm`
+`npm install`
+`cargo make start_prod`
+
+`cargo make start_back_prod`
+
+
 `wasm-pack build`
 
 
