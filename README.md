@@ -63,15 +63,11 @@ awaits, where every tick and tock resonates with an extraordinary chromatic reso
 
 **OR**
 
-`cargo build`
-
-`cargo install cargo-make`
-
 `cargo make start_back_prod`
 
 ## Start frontend:
 
-`npm install`
+(`npm install`)
 
 (`npm install -g pnpm`)
 
@@ -86,6 +82,10 @@ awaits, where every tick and tock resonates with an extraordinary chromatic reso
 **OR**
 
 `cargo make start_front_prod`
+
+**OR**
+
+`simple-http-server ./frontend/dist -i -p 8000 --nocache --try-file ./frontend/dist/index.html`
 
 > __NOTE__: _You might have to `Set-ExecutionPolicy RemoteSigned` to run pnpm commands on Windows._
 
