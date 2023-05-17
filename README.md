@@ -252,6 +252,15 @@ npm install -g wasm-pack
 
 To view all the available tasks, open Makefile.toml.
 
+## CONTRIBUTING
+
+Contributions are welcome! If you find a bug or have an idea for a new feature, please open an issue or submit a pull
+request.
+
+## LICENSE
+
+This project is licensed under the GPL-3.0 license. See the [LICENSE](LICENSE) file for details.
+
 ---
 
 © Carlo Bortolan
