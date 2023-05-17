@@ -40,20 +40,7 @@ awaits, where every tick and tock resonates with an extraordinary chromatic reso
 
 ## CONFIG
 
-`cargo build`
-`cargo install cargo-make`
-`npm install -g wasm-pack`
-`npm install -g pnpm`
-`npm install`
-`cargo make start_prod`
-
-`cargo make start_back_prod`
-
-`wasm-pack build`
-
----
-
-## Start backend:
+### Start backend:
 
 `cargo build`
 
@@ -65,7 +52,7 @@ awaits, where every tick and tock resonates with an extraordinary chromatic reso
 
 `cargo make start_back_prod`
 
-## Start frontend:
+### Start frontend:
 
 (`npm install`)
 
