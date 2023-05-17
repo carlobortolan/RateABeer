@@ -2,9 +2,12 @@
 
 A fullstack Rust application demo
 > __NOTE__: __THIS PROJECT IS STILL UNDER DEVELOPMENT.__
-> This is inspired by [rust-fullstack-demo](https://github.com/toadslop/rust-fullstack-demo) as seen in [__"Tokyo Rust
+
+> __NOTE__: _This is inspired by the [rust-fullstack-demo](https://github.com/toadslop/rust-fullstack-demo) as seen in [__"Tokyo Rust
 Meetup - Fullstack Web Dev in Rust"__](https://www.youtube.com/watch?v=5el5aFoJ8ws) and used to have a fun project for
-> experimenting with Rust and WASM.
+> experimenting with Rust and WASM._
+
+> __NOTE__: _At the moment_ [_https://ticktack.onrender.com_](https://ticktack.onrender.com) _only hosts the API. To experience the frontend, you need to run it locally._
 
 ## Functionality
 
