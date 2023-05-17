@@ -1,7 +1,8 @@
-# rust-fullstack-demo
+# RateABeer
 A fullstack Rust application demo
 > __NOTE__: __THIS PROJECT IS STILL UNDER DEVELOPMENT.__
-
+> This repository is used for experimenting with Rust and WASM.
+> This is inspired by [rust-fullstack-demo](https://github.com/toadslop/rust-fullstack-demo) as seen in [__"Tokyo Rust Meetup -  Fullstack Web Dev in Rust"__](https://www.youtube.com/watch?v=5el5aFoJ8ws).
 ## CONFIG
 `cargo build`
 `cargo install cargo-make`
