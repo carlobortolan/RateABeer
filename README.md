@@ -31,6 +31,33 @@ Or in the words of Ben Clymer:
 
 `wasm-pack build`
 
+---
+
+## Start backend:
+`cargo build`
+
+`cargo install cargo-make`
+
+`cargo run --bin backend`
+
+**OR** 
+
+`cargo build`
+
+`cargo install cargo-make`
+
+`cargo make start_back_prod`
+
+
+
+
+## Start frontend:
+`pnpm install`
+`npm install -g pnpm`
+`npm install`
+`npm install -g wasm-pack`
+
+
 
 
 ## Items Demonstrated In this App
@@ -126,10 +153,11 @@ FRONTEND_PROTOCOL=http
 
 DATABASE_PROTOCOL=postgres
 DATABASE_PORT=5432
-POSTGRES_USER=ratebeer_app
-POSTGRES_PASSWORD=passw0rd
-POSTGRES_DB=ratebeer_clone
-POSTGRES_HOST=database
+DATABASE_URL=postgres://render_user:Gx09JxUcyTcem4keRutEIoJxOfw74xGz@dpg-ch777fg2qv26p1bcg6g0-a.frankfurt-postgres.render.com
+POSTGRES_USER=render_user
+POSTGRES_PASSWORD=Gx09JxUcyTcem4keRutEIoJxOfw74xGz
+POSTGRES_DB=soup_db
+POSTGRES_HOST=dpg-ch777fg2qv26p1bcg6g0-a.frankfurt-postgres.render.com
 
 BACKEND_HOST=localhost
 BACKEND_HOST_INTERNAL=0.0.0.0
@@ -146,10 +174,11 @@ FRONTEND_PROTOCOL=http
 
 DATABASE_PROTOCOL=postgres
 DATABASE_PORT=5432
-POSTGRES_USER=ratebeer_app
-POSTGRES_PASSWORD=password
-POSTGRES_DB=ratebeer_clone
-POSTGRES_HOST=localhost
+DATABASE_URL=postgres://render_user:Gx09JxUcyTcem4keRutEIoJxOfw74xGz@dpg-ch777fg2qv26p1bcg6g0-a.frankfurt-postgres.render.com
+POSTGRES_USER=render_user
+POSTGRES_PASSWORD=Gx09JxUcyTcem4keRutEIoJxOfw74xGz
+POSTGRES_DB=soup_db
+POSTGRES_HOST=dpg-ch777fg2qv26p1bcg6g0-a.frankfurt-postgres.render.com
 
 BACKEND_HOST=localhost
 BACKEND_PORT=8080
