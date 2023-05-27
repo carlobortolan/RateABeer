@@ -3,11 +3,11 @@
 A Full-Stack Rust application empowered by WebAssembly (WASM).
 > __NOTE__: __THIS PROJECT IS STILL UNDER DEVELOPMENT.__
 
-> __NOTE__: _This is inspired by the [rust-fullstack-demo](https://github.com/toadslop/rust-fullstack-demo) as seen in [__"Tokyo Rust
+> __NOTE__: _At the moment_ [___https://ticktack.onrender.com___](https://ticktack.onrender.com) _hosts the API and_ [___https://ticktack.onrender.com___](https://ticktack.onrender.com) _hosts the Frontend. You can find the docker-repository for the frontend image_ [___here___](https://hub.docker.com/repository/docker/carlobortolan/ticktack-1-frontend/general).
+
+> __DISCLAIMER__: _This is inspired by the [rust-fullstack-demo](https://github.com/toadslop/rust-fullstack-demo) as seen in [__"Tokyo Rust
 Meetup - Fullstack Web Dev in Rust"__](https://www.youtube.com/watch?v=5el5aFoJ8ws) and used to have a fun project for
 > experimenting with Rust and WASM._
-
-> __NOTE__: _At the moment_ [_https://ticktack.onrender.com_](https://ticktack.onrender.com) _only hosts the API. To experience the frontend, you need to run it locally._
 
 ## Functionality
 
