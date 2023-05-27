@@ -12,24 +12,24 @@ pub struct Model {
     pub review_text: String,
     pub rating: i32,
     pub date: DateTime,
-    pub beer_id: i32,
+    pub watch_id: i32,
 }
 
 #[derive(Copy, Clone, Debug, EnumIter, DeriveRelation)]
 pub enum Relation {
     #[sea_orm(
-        belongs_to = "super::beer::Entity",
-        from = "Column::BeerId",
-        to = "super::beer::Column::Id",
+        belongs_to = "super::watch::Entity",
+        from = "Column::WatchId",
+        to = "super::watch::Column::Id",
         on_update = "NoAction",
         on_delete = "NoAction"
     )]
-    Beer,
+    Watch,
 }
 
-impl Related<super::beer::Entity> for Entity {
+impl Related<super::watch::Entity> for Entity {
     fn to() -> RelationDef {
-        Relation::Beer.def()
+        Relation::Watch.def()
     }
 }
 

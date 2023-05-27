@@ -2,5 +2,5 @@
 
 pub mod prelude;
 
-pub mod beer;
+pub mod watch;
 pub mod review;

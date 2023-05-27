@@ -1,5 +1,5 @@
-use ::entity::{beer, review};
-use entity::beer::Relation;
+use ::entity::{watch, review};
+use entity::watch::Relation;
 pub use migration;
 pub use migration::sea_orm_migration::MigratorTrait;
 use migration::DbErr;
@@ -10,33 +10,33 @@ use sea_orm::{DatabaseTransaction, TransactionTrait};
 use sea_orm::{DbConn, EntityTrait, ModelTrait};
 use sea_orm::{Set, TryIntoModel};
 
-pub struct BeerQueries;
+pub struct WatchQueries;
 
-impl BeerQueries {
-    pub async fn find_all(db: &DbConn) -> Result<Vec<beer::Model>, DbErr> {
-        beer::Entity::find().all(db).await
+impl WatchQueries {
+    pub async fn find_all(db: &DbConn) -> Result<Vec<watch::Model>, DbErr> {
+        watch::Entity::find().all(db).await
     }
 
-    pub async fn find_one(db: &DbConn, id: i32) -> Result<Option<beer::Model>, DbErr> {
-        beer::Entity::find_by_id(id).one(db).await
+    pub async fn find_one(db: &DbConn, id: i32) -> Result<Option<watch::Model>, DbErr> {
+        watch::Entity::find_by_id(id).one(db).await
     }
 
     pub async fn find_with_related(
         db: &DbConn,
         id: i32,
         relation: Relation,
-    ) -> Result<(Option<beer::Model>, Vec<review::Model>), sea_orm::DbErr> {
-        let beer = beer::Entity::find_by_id(id).one(db).await?;
+    ) -> Result<(Option<watch::Model>, Vec<review::Model>), sea_orm::DbErr> {
+        let watch = watch::Entity::find_by_id(id).one(db).await?;
 
-        let reviews = if let Some(beer) = &beer {
+        let reviews = if let Some(watch) = &watch {
             match relation {
-                Relation::Review => beer.find_related(review::Entity).all(db).await?,
+                Relation::Review => watch.find_related(review::Entity).all(db).await?,
             }
         } else {
             vec![]
         };
 
-        Ok((beer, reviews))
+        Ok((watch, reviews))
     }
 
     pub async fn add_review(
@@ -46,7 +46,7 @@ impl BeerQueries {
     ) -> Result<review::Model, DbErr> {
         let txn = db.begin().await?;
 
-        review.beer_id = id;
+        review.watch_id = id;
         let mut new_review = review::ActiveModel::from(review);
         new_review.id = ActiveValue::NotSet;
         new_review.date = ActiveValue::NotSet;
@@ -62,21 +62,21 @@ impl BeerQueries {
 
 async fn calc_avg_review(
     db: &DatabaseTransaction,
-    beer_id: i32,
+    watch_id: i32,
     new_rating: i32,
 ) -> Result<(), sea_orm::DbErr> {
     let review_count: Decimal = review::Entity::find()
-        .filter(review::Column::BeerId.eq(beer_id))
+        .filter(review::Column::WatchId.eq(watch_id))
         .count(db)
         .await?
         .into();
 
-    let reviewed_beer = beer::Entity::find_by_id(beer_id)
+    let reviewed_watch = watch::Entity::find_by_id(watch_id)
         .one(db)
         .await?
-        .expect("the reviewed beer to exist");
+        .expect("the reviewed watch to exist");
 
-    let current_average_rating = reviewed_beer.average_rating;
+    let current_average_rating = reviewed_watch.average_rating;
     let old_total = current_average_rating * (review_count - Decimal::from(1));
 
     let new_total = old_total + Decimal::from(new_rating);
@@ -85,10 +85,10 @@ async fn calc_avg_review(
         .checked_div(review_count)
         .unwrap_or(Decimal::from(0));
 
-    let mut reviewed_beer = beer::ActiveModel::from(reviewed_beer);
-    reviewed_beer.average_rating = Set(new_average);
+    let mut reviewed_watch = watch::ActiveModel::from(reviewed_watch);
+    reviewed_watch.average_rating = Set(new_average);
 
-    reviewed_beer.save(db).await?;
+    reviewed_watch.save(db).await?;
 
     Ok(())
 }

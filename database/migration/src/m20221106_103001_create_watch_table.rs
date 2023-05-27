@@ -9,31 +9,28 @@ impl MigrationTrait for Migration {
         manager
             .create_table(
                 Table::create()
-                    .table(Beer::Table)
+                    .table(Watch::Table)
                     .if_not_exists()
                     .col(
-                        ColumnDef::new(Beer::Id)
+                        ColumnDef::new(Watch::Id)
                             .integer()
                             .not_null()
                             .auto_increment()
                             .primary_key(),
                     )
-                    .col(ColumnDef::new(Beer::Name).string().not_null())
-                    .col(ColumnDef::new(Beer::Description).string().not_null())
-                    .col(ColumnDef::new(Beer::Brewery).string().not_null())
-                    .col(ColumnDef::new(Beer::BreweryLocation).string().not_null())
+                    .col(ColumnDef::new(Watch::Name).string().not_null())
+                    .col(ColumnDef::new(Watch::Description).string().not_null())
+                    .col(ColumnDef::new(Watch::Reference).string().not_null())
+                    .col(ColumnDef::new(Watch::Movement).string().not_null())
+                    .col(ColumnDef::new(Watch::Manufacturer).string().not_null())
+                    .col(ColumnDef::new(Watch::ManufacturerLocation).string().not_null())
                     .col(
-                        ColumnDef::new(Beer::AlcoholContent)
-                            .decimal_len(3, 1)
-                            .not_null(),
-                    )
-                    .col(
-                        ColumnDef::new(Beer::AverageRating)
+                        ColumnDef::new(Watch::AverageRating)
                             .decimal_len(3, 2)
                             .not_null(),
                     )
-                    .col(ColumnDef::new(Beer::ImageUrl).string().not_null())
-                    .col(ColumnDef::new(Beer::Style).string().not_null())
+                    .col(ColumnDef::new(Watch::ImageUrl).string().not_null())
+                    .col(ColumnDef::new(Watch::Style).string().not_null())
                     .to_owned(),
             )
             .await
@@ -41,19 +38,20 @@ impl MigrationTrait for Migration {
 
     async fn down(&self, manager: &SchemaManager) -> Result<(), DbErr> {
         manager
-            .drop_table(Table::drop().table(Beer::Table).to_owned())
+            .drop_table(Table::drop().table(Watch::Table).to_owned())
             .await
     }
 }
 
 #[derive(Iden)]
-pub enum Beer {
+pub enum Watch {
     Table,
     Id,
     Name,
-    Brewery,
-    BreweryLocation,
-    AlcoholContent,
+    Reference,
+    Movement,
+    Manufacturer,
+    ManufacturerLocation,
     AverageRating,
     Description,
     ImageUrl,

@@ -1,6 +1,6 @@
 use sea_orm_migration::prelude::*;
 
-use crate::m20221106_103001_create_beer_table::Beer;
+use crate::m20221106_103001_create_watch_table::Watch;
 
 #[derive(DeriveMigrationName)]
 pub struct Migration;
@@ -29,12 +29,12 @@ impl MigrationTrait for Migration {
                             .default("now()")
                             .not_null(),
                     )
-                    .col(ColumnDef::new(Review::BeerId).integer().not_null())
+                    .col(ColumnDef::new(Review::WatchId).integer().not_null())
                     .foreign_key(
                         ForeignKey::create()
-                            .name("fk_beer")
-                            .from(Review::Table, Review::BeerId)
-                            .to(Beer::Table, Beer::Id),
+                            .name("fk_watch")
+                            .from(Review::Table, Review::WatchId)
+                            .to(Watch::Table, Watch::Id),
                     )
                     .to_owned(),
             )
@@ -56,5 +56,5 @@ enum Review {
     Rating,
     ReviewText,
     Date,
-    BeerId,
+    WatchId,
 }

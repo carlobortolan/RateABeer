@@ -5,16 +5,16 @@ use serde::{Deserialize, Serialize};
 use strum::{Display, EnumString};
 
 #[derive(Clone, Debug, PartialEq, DeriveEntityModel, Eq, Serialize, Deserialize)]
-#[sea_orm(table_name = "beer")]
+#[sea_orm(table_name = "watch")]
 pub struct Model {
     #[sea_orm(primary_key)]
     pub id: i32,
     pub name: String,
     pub description: String,
-    pub brewery: String,
-    pub brewery_location: String,
-    #[sea_orm(column_type = "Decimal(Some((3, 1)))")]
-    pub alcohol_content: Decimal,
+    pub reference: String,
+    pub movement: String,
+    pub manufacturer: String,
+    pub manufacturer_location: String,
     #[sea_orm(column_type = "Decimal(Some((3, 2)))")]
     pub average_rating: Decimal,
     pub image_url: String,
