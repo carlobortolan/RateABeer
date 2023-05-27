@@ -17,6 +17,8 @@ pub async fn add_review(
 
     Request::post(url.as_str())
         .header("Content-Type", "application/json")
+        .header("Origin", "https://ticktack-frontend.onrender.com")
+        .header("Referer", "https://ticktack-frontend.onrender.com")
         .body(as_string)
         .send()
         .await?
