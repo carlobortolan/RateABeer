@@ -6,10 +6,10 @@ use std::error::Error;
 use super::get_api_url;
 
 pub async fn add_review(
-    beer_id: i32,
+    watch_id: i32,
     review: &review::Model,
 ) -> Result<review::Model, Box<dyn Error>> {
-    let endpoint = REVIEWS_BY_BEER_ROUTE.replace("{beer_id}", &beer_id.to_string());
+    let endpoint = REVIEWS_BY_BEER_ROUTE.replace("{watch_id}", &watch_id.to_string());
     let url = get_api_url(&endpoint);
     let as_js_value =
         serde_wasm_bindgen::to_value(review).expect("the review to be translatable to a jsvalue");

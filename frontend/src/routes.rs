@@ -1,14 +1,14 @@
 use yew::{html, Html, virtual_dom::AttrValue};
 use yew_router::Routable;
 
-use crate::pages::{beer_detail::BeerDetail, beer_list::BeerList};
+use crate::pages::{watch_detail::WatchDetail, watch_list::WatchList};
 
 #[derive(Clone, Routable, PartialEq, Eq)]
 pub enum Route {
     #[at("/")]
-    Beers,
-    #[at("/beers/:beer_id")]
-    BeerDetail { beer_id: String },
+    Watches,
+    #[at("/watches/:watch_id")]
+    WatchDetail { watch_id: String },
     #[not_found]
     #[at("/settings/404")]
     NotFound,
@@ -17,11 +17,11 @@ pub enum Route {
 pub fn switch(routes: &Route) -> Html {
     match routes {
         #[allow(clippy::let_unit_value)]
-        Route::Beers => {
-            html! { <BeerList /> }
+        Route::Watches => {
+            html! { <WatchList /> }
         }
-        Route::BeerDetail { beer_id } => {
-            html! {<BeerDetail beer_id={AttrValue::Owned(beer_id.to_owned())} />}
+        Route::WatchDetail { watch_id } => {
+            html! {<WatchDetail watch_id={AttrValue::Owned(watch_id.to_owned())} />}
         }
         Route::NotFound => html! { <h2>{"404! Not found!"}</h2>},
     }

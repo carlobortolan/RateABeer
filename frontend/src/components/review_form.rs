@@ -6,15 +6,15 @@ use yew::{function_component, html, use_state, Callback, Properties, UseStateHan
 
 #[derive(Properties, PartialEq)]
 pub struct Props {
-    pub beer_id: i32,
+    pub watch_id: i32,
     pub reviews_handle: UseStateHandle<Vec<review::Model>>,
 }
 
 #[function_component(ReviewForm)]
 pub fn review_form(props: &Props) -> Html {
-    let beer_id = props.beer_id;
+    let watch_id = props.watch_id;
     let new_rating_handle = use_state(|| review::Model {
-        beer_id,
+        watch_id,
         rating: 0,
         ..Default::default()
     });
@@ -73,7 +73,7 @@ pub fn review_form(props: &Props) -> Html {
             let new_rating = (*new_rating_handle).to_owned();
 
             wasm_bindgen_futures::spawn_local(async move {
-                let result = add_review(beer_id, &new_rating).await;
+                let result = add_review(watch_id, &new_rating).await;
 
                 match result {
                     Ok(resp) => {

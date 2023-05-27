@@ -1,2 +1,2 @@
-pub mod beer_detail;
-pub mod beer_list;
+pub mod watch_detail;
+pub mod watch_list;

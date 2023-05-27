@@ -15,17 +15,17 @@ static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 #[wasm_bindgen]
 pub fn main() {
     println!("STARTED main 0");
-    yew::start_app::<RateBeer>();
+    yew::start_app::<TickTack>();
     println!("STARTED main 1");
 }
 
-#[function_component(RateBeer)]
-pub fn rate_beer() -> Html {
-    println!("STARTED rate_beer");
+#[function_component(TickTack)]
+pub fn rate_watch() -> Html {
+    println!("STARTED rate_watch");
 
     html! {
         <div class="container mt-5">
-          <h1>{ "Rate Beer" }</h1>
+          <h1>{ "Rate your favorite watches" }</h1>
           <div>
             <BrowserRouter>
               <Switch<Route> render={Switch::render(switch)} />

@@ -1,28 +1,28 @@
 use super::get_api_url;
-use entity::beer::Model as Beer;
+use entity::watch::Model as Watch;
 use entity::review::Model as Review;
 use reqwasm::http::Request;
 use shared::{ApiQueryParams, BEERS_ROUTE};
 use std::error::Error;
 
-pub async fn get_beers() -> Result<Vec<Beer>, Box<dyn Error>> {
-    println!("STARTED get_beers");
+pub async fn get_watches() -> Result<Vec<Watch>, Box<dyn Error>> {
+    println!("STARTED get_watches");
 
     let url = get_api_url(BEERS_ROUTE);
 
-    let beers = Request::get(url.as_str())
+    let watches = Request::get(url.as_str())
         .send()
         .await?
-        .json::<Vec<Beer>>()
+        .json::<Vec<Watch>>()
         .await?;
 
-    Ok(beers)
+    Ok(watches)
 }
 
-pub async fn get_beer(
+pub async fn get_watch(
     id: i32,
     queries: Option<ApiQueryParams>,
-) -> Result<(Beer, Vec<Review>), Box<dyn Error>> {
+) -> Result<(Watch, Vec<Review>), Box<dyn Error>> {
     let mut url = get_api_url(&[BEERS_ROUTE, &id.to_string()].join("/"));
 
     if let Some(queries) = queries {
@@ -31,11 +31,11 @@ pub async fn get_beer(
         }
     }
 
-    let beer = Request::get(url.as_str())
+    let watch = Request::get(url.as_str())
         .send()
         .await?
-        .json::<(Beer, Vec<Review>)>()
+        .json::<(Watch, Vec<Review>)>()
         .await?;
 
-    Ok(beer)
+    Ok(watch)
 }

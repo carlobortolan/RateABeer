@@ -1,6 +1,6 @@
 use load_dotenv::load_dotenv;
 use shared::{Url, DEFAULT_BACKEND_URL};
-pub mod beer;
+pub mod watch;
 pub mod review;
 
 pub fn get_api_url(endpoint: &str) -> Url {
