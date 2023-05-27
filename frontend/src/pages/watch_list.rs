@@ -83,10 +83,10 @@ pub fn watch_list() -> Html {
                     </colgroup>
                     <thead>
                         <tr>
-                            <th scope="col" onclick={sortable_header_click("name")}>{"Name"}</th>
-                            <th scope="col" onclick={sortable_header_click("reference")}>{"Reference"}</th>
-                            <th scope="col" onclick={sortable_header_click("average_rating")}>{"Rating"}</th>
-                            <th scope="col" onclick={sortable_header_click("style")}>{"Style"}</th>
+                            <th class="pointer" scope="col" onclick={sortable_header_click("name")}>{"Name"}</th>
+                            <th class="pointer" scope="col" onclick={sortable_header_click("reference")}>{"Reference"}</th>
+                            <th class="pointer" scope="col" onclick={sortable_header_click("average_rating")}>{"Rating"}</th>
+                            <th class="pointer" scope="col" onclick={sortable_header_click("style")}>{"Style"}</th>
                         </tr>
                     </thead>
                     <tbody>
