@@ -13,8 +13,8 @@ pub async fn get_watches() -> Result<Vec<Watch>, Box<dyn Error>> {
     let url = get_api_url(WATCHES_ROUTE);
 
     let watches = Request::get(url.as_str())
-        .header("Origin", "https://ticktack-frontend.onrender.com")
-        .header("Referer", "https://ticktack-frontend.onrender.com")
+        .header("Origin", "https://ticktack-frontend.onrender.com") // Replace with your frontend URL
+        .header("Referer", "https://ticktack-frontend.onrender.com") // Replace with your frontend URL
         .send()
         .await?
         .json::<Vec<Watch>>()
