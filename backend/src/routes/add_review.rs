@@ -2,7 +2,7 @@ use actix_web::{
     web::{self, Data},
     HttpResponse, Responder,
 };
-use database::BeerQueries;
+use database::WatchQueries;
 use entity::review;
 
 use crate::config::app_state::AppState;
@@ -13,9 +13,9 @@ pub async fn add_review(
     rating: web::Json<review::Model>,
 ) -> impl Responder {
     println!("HIT ADD REVIW ----------------------------------------");
-    let beer_id = path.into_inner();
+    let watch_id = path.into_inner();
     let db = &data.db;
-    let new_review = BeerQueries::add_review(db, beer_id, rating.0).await;
+    let new_review = WatchQueries::add_review(db, watch_id, rating.0).await;
 
     match new_review {
         Ok(review) => HttpResponse::Created().json(review),

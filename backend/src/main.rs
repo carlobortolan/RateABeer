@@ -3,7 +3,7 @@ use actix_web::{
     App, HttpServer,
 };
 use config::{app_state::AppState, cors::get_cors_config, database::get_db_config, env::Env};
-use routes::{add_review::add_review, all_beers::beers, one_beer_by_id::one_beer_by_id};
+use routes::{add_review::add_review, all_watches::watches, one_watch_by_id::one_watch_by_id};
 use shared::{BEERS_ROUTE, REVIEWS_BY_BEER_ROUTE, SINGLE_BEER_ROUTE};
 use std::io::Error;
 
@@ -39,8 +39,8 @@ async fn main() -> std::io::Result<()> {
         App::new()
             .app_data(Data::new(state.clone()))
             .wrap(cors)
-            .route(BEERS_ROUTE, web::get().to(beers))
-            .route(SINGLE_BEER_ROUTE, web::get().to(one_beer_by_id))
+            .route(BEERS_ROUTE, web::get().to(watches))
+            .route(SINGLE_BEER_ROUTE, web::get().to(one_watch_by_id))
             .route(REVIEWS_BY_BEER_ROUTE, web::post().to(add_review))
     })
     .bind((host, port))?
