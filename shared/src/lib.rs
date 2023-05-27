@@ -1,6 +1,7 @@
 use serde::Deserialize;
 
-pub const DEFAULT_FRONTEND_URL: &str = "http://localhost:8000";
+//pub const DEFAULT_FRONTEND_URL: &str = "http://localhost:8000";
+pub const DEFAULT_FRONTEND_URL: &str = "https://ticktack-frontend.onrender.com";
 pub const FRONTEND_HOST_KEY: &str = "FRONTEND_HOST";
 pub const FRONTEND_PORT_KEY: &str = "FRONTEND_PORT";
 pub const FRONTEND_PROTOCOL_KEY: &str = "FRONTEND_PROTOCOL";
@@ -20,9 +21,9 @@ pub const BACKEND_INTERNAL_HOST_KEY: &str = "BACKEND_HOST_INTERNAL";
 pub const BACKEND_PORT_KEY: &str = "BACKEND_PORT";
 pub const BACKEND_PROTOCOL_KEY: &str = "BACKEND_PROTOCOL";
 
-pub const BEERS_ROUTE: &str = "/watches";
-pub const SINGLE_BEER_ROUTE: &str = "/watches/{watch_id}";
-pub const REVIEWS_BY_BEER_ROUTE: &str = "/watches/{watch_id}/reviews";
+pub const WATCHES_ROUTE: &str = "/watches";
+pub const SINGLE_WATCH_ROUTE: &str = "/watches/{watch_id}";
+pub const REVIEWS_BY_WATCH_ROUTE: &str = "/watches/{watch_id}/reviews";
 
 pub enum AppComponent {
     Frontend,
