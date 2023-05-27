@@ -20,9 +20,9 @@ pub const BACKEND_INTERNAL_HOST_KEY: &str = "BACKEND_HOST_INTERNAL";
 pub const BACKEND_PORT_KEY: &str = "BACKEND_PORT";
 pub const BACKEND_PROTOCOL_KEY: &str = "BACKEND_PROTOCOL";
 
-pub const BEERS_ROUTE: &str = "/beers";
-pub const SINGLE_BEER_ROUTE: &str = "/beers/{beer_id}";
-pub const REVIEWS_BY_BEER_ROUTE: &str = "/beers/{beer_id}/reviews";
+pub const BEERS_ROUTE: &str = "/watches";
+pub const SINGLE_BEER_ROUTE: &str = "/watches/{watch_id}";
+pub const REVIEWS_BY_BEER_ROUTE: &str = "/watches/{watch_id}/reviews";
 
 pub enum AppComponent {
     Frontend,
