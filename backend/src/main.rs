@@ -36,11 +36,11 @@ async fn main() -> std::io::Result<()> {
 
     log::info!("Listening on {}:{}", host, port);
     HttpServer::new(move || {
-        //     let cors = get_cors_config(&env);
+        let cors = get_cors_config(&env);
 
         App::new()
             .app_data(Data::new(state.clone()))
-//            .wrap(cors)
+            .wrap(cors)
             .route(WATCHES_ROUTE, web::get().to(watches))
             .route(SINGLE_WATCH_ROUTE, web::get().to(one_watch_by_id))
             .route(REVIEWS_BY_WATCH_ROUTE, web::post().to(add_review))
