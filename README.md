@@ -125,6 +125,16 @@ In theory it would be sufficient to run `docker-compose up` and, once everything
 
 Note that docker-compose will start the app in production mode.
 
+To push to your remote docker-repository run:
+```
+docker-compose up
+docker tag ticktack-1-backend:latest carlobortolan/ticktack:backend
+docker tag ticktack-1-frontend:latest carlobortolan/ticktack:frontend
+docker push carlobortolan/ticktack:backend
+docker push carlobortolan/ticktack:frontend
+```
+
+
 ## Running Outside Docker
 
 ### Database Installation
