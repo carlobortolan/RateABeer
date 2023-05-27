@@ -121,7 +121,7 @@ Next, install `docker-compose`.
 This will allow us to build and run several docker containers simultaneously.
 Instructions can be found [here](https://docs.docker.com/compose/install/).
 
-Once everything is up and running, visit [http://localhost:8000] to view the app.
+In theory it would be sufficient to run `docker-compose up` and, once everything is up and running, visit http://localhost:8000 to view the app.
 
 Note that docker-compose will start the app in production mode.
 
