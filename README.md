@@ -1,6 +1,6 @@
 # TickTack
 
-A fullstack Rust application demo
+A Full-Stack Rust application empowered by WebAssembly (WASM).
 > __NOTE__: __THIS PROJECT IS STILL UNDER DEVELOPMENT.__
 
 > __NOTE__: _This is inspired by the [rust-fullstack-demo](https://github.com/toadslop/rust-fullstack-demo) as seen in [__"Tokyo Rust
@@ -11,7 +11,7 @@ Meetup - Fullstack Web Dev in Rust"__](https://www.youtube.com/watch?v=5el5aFoJ8
 
 ## Functionality
 
-WASM based web-app to post, share and like pictures of wristwatches.
+WASM based web-app that keeps track of the most polular mechanical wristwatches at the time, allowing users to rate and comment their favorite timepieces.
 Or in the words of Ben Clymer:
 > _"Welcome, watch enthusiasts, to TickTack, an extraordinary digital realm where the magic of horology unfolds in an
 awe-inspiring tapestry of colors! Prepare to embark on a chromatic voyage, where the very essence of time is captured in
