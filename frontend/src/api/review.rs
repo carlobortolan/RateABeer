@@ -1,7 +1,8 @@
+use std::error::Error;
+
 use entity::review;
 use reqwasm::http::Request;
 use shared::REVIEWS_BY_WATCH_ROUTE;
-use std::error::Error;
 
 use super::get_api_url;
 
@@ -17,7 +18,8 @@ pub async fn add_review(
 
     Request::post(url.as_str())
         .header("Content-Type", "application/json")
-        .body(as_string)
+        .header("Origin", "https://ticktack-frontend.onrender.com") // Replace with your frontend URL
+        .header("Referer", "https://ticktack-frontend.onrender.com") // Replace with your frontend URL.body(as_string)
         .send()
         .await?
         .json::<review::Model>()
