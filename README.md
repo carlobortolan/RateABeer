@@ -9,7 +9,7 @@ A Full-Stack Rust application empowered by WebAssembly (WASM).
 Meetup - Fullstack Web Dev in Rust"__](https://www.youtube.com/watch?v=5el5aFoJ8ws) and used to have a fun project for
 > experimenting with Rust and WASM._
 
-## Functionality
+## FUNCTIONALITY
 
 WASM based web-app that keeps track of the most polular mechanical wristwatches at the time, allowing users to rate and comment their favorite timepieces.
 Or in the words of Ben Clymer:
@@ -79,7 +79,7 @@ awaits, where every tick and tock resonates with an extraordinary chromatic reso
 
 > __NOTE__: _You might have to `Set-ExecutionPolicy RemoteSigned` to run pnpm commands on Windows._
 
-## Items Demonstrated In this App
+## ITEMS DEMONSTRATED IN THIS APP
 
 ### General
 
@@ -112,7 +112,7 @@ awaits, where every tick and tock resonates with an extraordinary chromatic reso
 * Posting data
 * Building with webpack
 
-## Running on Docker
+## RUNNING ON DOCKER
 
 First install Docker.
 You can find instructions [here](https://docs.docker.com/get-docker/).
@@ -135,7 +135,7 @@ docker push <docker-username>/<docker-repository>:frontend
 ```
 
 
-## Running Outside Docker
+## RUNNING OUTSIDE DOCKER
 
 ### Database Installation
 
@@ -185,7 +185,7 @@ rather than the default 5432. To resolve this, try using the -p flag as follows:
 sudo -u postgres psql -p 5433
 ```
 
-### ENV FILE
+### ENV file
 
 You'll need a file to hold necessary environment variables.
 If you're running docker, it should be named `docker.env` and contain the following:
