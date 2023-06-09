@@ -12,24 +12,13 @@ Meetup - Fullstack Web Dev in Rust"__](https://www.youtube.com/watch?v=5el5aFoJ8
 ## FUNCTIONALITY
 
 WASM based web-app that keeps track of the most polular mechanical wristwatches at the time, allowing users to rate and comment their favorite timepieces.
-Or in the words of Ben Clymer:
-> _"Welcome, watch enthusiasts, to TickTack, an extraordinary digital realm where the magic of horology unfolds in an
-awe-inspiring tapestry of colors! Prepare to embark on a chromatic voyage, where the very essence of time is captured in
-resplendent hues, giving life to exquisite wristwatches that beckon your admiration._
->
-> _With every click, TickTack transports you into a realm where watch connoisseurs unite in a symphony of vibrant
+Or in the words of Ben Clymer (/GPT3.5):
+> _"With every click, TickTack transports you into a realm where watch connoisseurs unite in a symphony of vibrant
 conversations and captivating visual narratives. Delve into a luminous palette of watch photography, each frame a
 testament to the artistry, craftsmanship, and boundless creativity of watchmakers from across the globe._
 >
-> _From the sun-kissed dials of azure blue, reminiscent of carefree coastal escapes, to the fiery depths of vibrant reds
-that evoke a passionate ardor for horology, TickTack is an ever-evolving kaleidoscope of timekeeping marvels. Immerse
-yourself in a spectrum of shades, from the elegant monochromes that embody timeless sophistication to the daring
-chromatic symphonies that defy conventions._
->
 > _As you traverse the opulent landscapes of TickTack, be prepared to engage in a realm of intellectual discourse and
-enlightening dialogues. Connect with fellow horological explorers who share a fervor for the intricacies of watchmaking.
-From insightful discussions on haute horlogerie complications to spirited debates on vintage versus modern aesthetics,
-TickTack serves as the vibrant agora where horological enlightenment flourishes._
+enlightening dialogues. Connect with fellow horological explorers who share a fervor for the intricacies of watchmaking._
 >
 > _Capture your own horological adventures through the lens of your timepiece, sharing your chronometric masterpieces
 with an audience that awaits your narrative. Experience the thrill of camaraderie as passionate watch collectors,
@@ -38,8 +27,7 @@ all._
 >
 > _Join the luminous world of TickTack, where time is an exquisite work of art, and watches become the brushstrokes that
 paint your wrist with unparalleled elegance. Let the vibrant spirit of TickTack ignite your imagination, as we celebrate
-the hues, stories, and the infinite palette of possibilities that watches bring to our lives. The symphony of TickTack
-awaits, where every tick and tock resonates with an extraordinary chromatic resonance."_
+the hues, stories, and the infinite palette of possibilities that watches bring to our lives."_
 
 ## CONFIG
 
