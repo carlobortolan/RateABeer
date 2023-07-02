@@ -12,7 +12,8 @@ Meetup - Fullstack Web Dev in Rust"__](https://www.youtube.com/watch?v=5el5aFoJ8
 ## FUNCTIONALITY
 
 WASM based web-app that keeps track of the most polular mechanical wristwatches at the time, allowing users to rate and comment their favorite timepieces.
-Or in the words of Ben Clymer (/GPT3.5):
+
+<!-- Or in the words of Ben Clymer (/GPT3.5):
 > _"With every click, TickTack transports you into a realm where watch connoisseurs unite in a symphony of vibrant
 conversations and captivating visual narratives. Delve into a luminous palette of watch photography, each frame a
 testament to the artistry, craftsmanship, and boundless creativity of watchmakers from across the globe._
@@ -27,12 +28,11 @@ all._
 >
 > _Join the luminous world of TickTack, where time is an exquisite work of art, and watches become the brushstrokes that
 paint your wrist with unparalleled elegance. Let the vibrant spirit of TickTack ignite your imagination, as we celebrate
-the hues, stories, and the infinite palette of possibilities that watches bring to our lives."_
+the hues, stories, and the infinite palette of possibilities that watches bring to our lives."_ -->
 
 ## CONFIG
 
-### Start backend:
-
+<details><summary><b>Start backend</b></summary>
 `cargo build`
 
 `cargo install cargo-make`
@@ -42,8 +42,9 @@ the hues, stories, and the infinite palette of possibilities that watches bring 
 **OR**
 
 `cargo make start_back_prod`
+</details>
 
-### Start frontend:
+<details><summary><b>Start frontend</b></summary>
 
 (`npm install`)
 
@@ -66,6 +67,8 @@ the hues, stories, and the infinite palette of possibilities that watches bring 
 `simple-http-server ./frontend/dist -i -p 8000 --nocache --try-file ./frontend/dist/index.html`
 
 > __NOTE__: _You might have to `Set-ExecutionPolicy RemoteSigned` to run pnpm commands on Windows._
+
+</details>
 
 ## ITEMS DEMONSTRATED IN THIS APP
 
@@ -105,8 +108,7 @@ the hues, stories, and the infinite palette of possibilities that watches bring 
 First install Docker.
 You can find instructions [here](https://docs.docker.com/get-docker/).
 
-Next, install `docker-compose`.
-This will allow us to build and run several docker containers simultaneously.
+Next, install `docker-compose` to build and run several docker containers simultaneously.
 Instructions can be found [here](https://docs.docker.com/compose/install/).
 
 In theory it would be sufficient to run `docker-compose up` and, once everything is up and running, visit http://localhost:8000 to view the app.
@@ -130,17 +132,13 @@ docker push <docker-username>/<docker-repository>:frontend
 This app requires a Postgres 14 database.
 
 Downloads for the various operating systems can be
-found [here](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
+found [here](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads).
 
 #### Windows
 
-Refer to this [article](https://www.postgresqltutorial.com/postgresql-getting-started/install-postgresql/)
+Refer to this [article](https://www.postgresqltutorial.com/postgresql-getting-started/install-postgresql/).
 
 After installation, open your terminal and try running "psql".
-If you find that the command isn't find, then you probably need to set some environment variables.
-Follow the instructions in step 3 of
-this [article](https://aeadedoyin.medium.com/getting-started-with-postgresql-on-windows-201906131300-ee75f066df78) to do
-so.
 Keep in mind that you will need to set the version to 14.
 
 #### Mac
@@ -248,7 +246,7 @@ If you get this error, run the following command and then try again:
 npm install -g wasm-pack
 ```
 
-To view all the available tasks, open Makefile.toml.
+To view all the available tasks, open [Makefile.toml](/Makefile.toml).
 
 ## CONTRIBUTING
 
@@ -259,12 +257,10 @@ request.
 
 This project is licensed under the GPL-3.0 license. See the [LICENSE](LICENSE) file for details.
 
-
 ---
-
 
 © Carlo Bortolan
 
 > Carlo Bortolan &nbsp;&middot;&nbsp;
 > GitHub [carlobortolan](https://github.com/carlobortolan) &nbsp;&middot;&nbsp;
-> contact via [carlobortolan@gmail.com](carlobortolan@gmail.com)
+> contact via [carlobortolan@gmail.com](mailto:carlobortolan@gmail.com)
