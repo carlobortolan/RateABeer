@@ -19,7 +19,8 @@ pub async fn add_review(
     Request::post(url.as_str())
         .header("Content-Type", "application/json")
         .header("Origin", "https://ticktack-frontend.onrender.com") // Replace with your frontend URL
-        .header("Referer", "https://ticktack-frontend.onrender.com") // Replace with your frontend URL.body(as_string)
+        .header("Referer", "https://ticktack-frontend.onrender.com") // Replace with your frontend URL
+        .body(as_string)
         .send()
         .await?
         .json::<review::Model>()

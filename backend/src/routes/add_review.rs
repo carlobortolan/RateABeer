@@ -12,7 +12,7 @@ pub async fn add_review(
     data: Data<AppState>,
     rating: web::Json<review::Model>,
 ) -> impl Responder {
-    println!("HIT ADD REVIW ----------------------------------------");
+    println!("HIT ADD REVIEW ----------------------------------------");
     let watch_id = path.into_inner();
     let db = &data.db;
     let new_review = WatchQueries::add_review(db, watch_id, rating.0).await;
