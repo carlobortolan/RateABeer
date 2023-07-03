@@ -12,7 +12,7 @@ pub fn get_cors_config(env: &Env) -> Cors {
     Cors::default()
         .allowed_origin(&url)
         // TODO: Workaround for CORS-Frontend issue
-        .allowed_origins(vec!["https://ticktack.carlobortolan.com", "https://ticktack.carlobortolan.com"])
+        .allowed_origin("https://ticktack.carlobortolan.com")
         .allowed_methods(vec![Method::GET, Method::POST])
         .allowed_headers(vec![http::header::AUTHORIZATION, http::header::ACCEPT])
         .allowed_header(http::header::CONTENT_TYPE)
