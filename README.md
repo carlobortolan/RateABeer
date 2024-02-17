@@ -1,9 +1,12 @@
 # TickTack
 
 A Full-Stack Rust application empowered by WebAssembly (WASM).
-> __NOTE__: __THIS PROJECT IS STILL UNDER DEVELOPMENT.__
 
-> __NOTE__: _At the moment_ [___https://ticktack-api.onrender.com___](https://ticktack-api.onrender.com/watches) _hosts the API and_ [___https://ticktack.carlobortolan.com___](https://ticktack.carlobortolan.com) _hosts the Frontend. You can find the docker-repository for the Frontend-image at_ `docker.io/carlobortolan/ticktack:frontend`.
+> [!IMPORTANT]
+> As of February 18, 2024, this project has been put on hold and will probably not be worked on or finished in the near future.
+
+> [!NOTE]
+> At the moment_ [___https://ticktack-api.onrender.com___](https://ticktack-api.onrender.com/watches) _hosts the API and_ [___https://ticktack.carlobortolan.com___](https://ticktack.carlobortolan.com) _hosts the Frontend. You can find the docker-repository for the Frontend-image at `docker.io/carlobortolan/ticktack:frontend`.
 
 > __DISCLAIMER__: _This is inspired by the [rust-fullstack-demo](https://github.com/toadslop/rust-fullstack-demo) as seen in [__"Tokyo Rust
 Meetup - Fullstack Web Dev in Rust"__](https://www.youtube.com/watch?v=5el5aFoJ8ws) and used to have a fun project for
@@ -67,7 +70,8 @@ the hues, stories, and the infinite palette of possibilities that watches bring 
 
 `simple-http-server ./frontend/dist -i -p 8000 --nocache --try-file ./frontend/dist/index.html`
 
-> __NOTE__: _You might have to `Set-ExecutionPolicy RemoteSigned` to run pnpm commands on Windows._
+> [!NOTE]
+> You might have to `Set-ExecutionPolicy RemoteSigned` to run pnpm commands on Windows.
 
 </details>
 
